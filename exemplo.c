@@ -54,7 +54,7 @@ int main()
         printf("\n");
     }
     // __________________________________
-    //|Implementar o algoritmo de busca  |
+    //|Implementar o algoritmo           |
     //|__________________________________|
 
     return 0;
