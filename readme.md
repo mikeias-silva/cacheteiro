@@ -41,7 +41,7 @@ propriamente ditos. Na especificação, as seguintes linhas poderão ser encontr
 - TYPE: o tipo da instância. Só trabalharemos com instâncias do tipo TSP.
 - COMMENT: comentários sobre a instância.
 - DIMENSION: tamanho (número de cidades) da instância.
-  - EDGE_WEIGHT_TYPE: a forma de cálculo da distância. Serão aceitas duas opções para este parâmetro: EUC_2D, EUC_3D.
+- EDGE_WEIGHT_TYPE: a forma de cálculo da distância.
   - EUC_2D – as distâncias são euclidianas, e duas coordenadas são consideradas.
   - EUC_3D – as distâncias são euclidianas, e três coordenadas são consideradas.
   - EXPLICIT – todas as distâncias são dadas no arquivo.
