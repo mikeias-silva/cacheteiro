@@ -13,15 +13,78 @@
 
 int N;		    /* numero de vertices */
 int **g;	    /* matriz de distancias */
+
+int ary[10][10],completed[10],cost=0;
+ 
+int i,j;
+
+
+
+
+int least(int c)
+{
+    int i,j,nc=999;
+    int min=999,kmin;
+ 
+    for(i=0;i < N;i++)
+    {
+        if((g[i][c]!=0)&&(completed[i]==0))
+
+       
+        
+            if(g[c][i]+g[i][c] < min)
+            {
+                min=g[i][0]+g[c][i];
+                kmin=g[c][i];
+                nc=i;
+            }
+    }
+ 
+    if(min!=999)
+        cost+=kmin;
+ 
+    return nc;
+}
+
+void mincost(int cidade)
+{
+    int i,nCidade;
+ 
+    completed[cidade]=1;
+
+    
+    // for(i = 0; i<=cidade; i++ )
+    // {
+    //     printf("\n ||ce ta doido %d||", completed[i]);
+    // }
+    
+ 
+    printf(" cidade %d--->",cidade+1);
+  
+    
+    nCidade=least(cidade);
+
+    if(nCidade==999)
+    {
+        nCidade=0;
+        printf("%d",nCidade+1 );
+        cost+=g[cidade][nCidade];
+ 
+        return;
+    }
+ 
+    mincost(nCidade);
+}
+ 
     
 int main()
 {
-    int i,j;
+    
     FILE *fd;
     char buf[20];
 
     /* Abrir o arquivo na mesma pasta de nome entrada.tsp.*/
-    fd=fopen("./entrada.tsp","r");
+    fd=fopen("./brazil58.tsp","r");
     do{
         fscanf(fd,"%s",buf);//Lê uma palavra inteira
         //verificar se a palavra corresponde a "DIMENSION:" ou "DIMENSION"
@@ -47,15 +110,21 @@ int main()
         }
     }
     //apenas para mostrar o exemplo
+    printf("Impressao matriz\n");
      for(i=0;i<N;i++){
         for(j=0;j<N;j++){
-            printf("%d\t", g[i][j]);
+            printf(" %d\t", g[i][j]);
         }
         printf("\n");
     }
+
+
+    
     // __________________________________
     //|Implementar o algoritmo           |
     //|__________________________________|
-
+    
+    mincost(0);
+    printf("\n");
     return 0;
 }

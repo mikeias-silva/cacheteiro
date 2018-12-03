@@ -1,0 +1,12 @@
+NAME:
+COMMENT: solucao obtida pelo aluno xx-x.xxxx
+TYPE: TOUR
+DIMENSION: n
+TOTAL_WEIGHT: xxx
+TOUR_SECTION
+3
+2
+4
+1
+5
+EOF
